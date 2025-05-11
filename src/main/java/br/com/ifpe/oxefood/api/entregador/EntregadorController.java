@@ -34,4 +34,10 @@ public class EntregadorController {
    public Entregador obterPorID(@PathVariable Long id) {
        return entregadorService.obterPorID(id);
    }
+
+   @PutMapping("/{id}")
+   public ResponseEntity<Entregador> update(@PathVariable("id") Long id, @RequestBody EntregadorRequest request) {
+       entregadorService.update(id, request.build());
+       return ResponseEntity.ok().build();
+   }
 }
