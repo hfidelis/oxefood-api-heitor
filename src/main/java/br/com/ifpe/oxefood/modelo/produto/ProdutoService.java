@@ -38,6 +38,7 @@ public class ProdutoService {
        produto.setValorUnitario(produtoAlterado.getValorUnitario());
        produto.setTempoEntregaMinimo(produtoAlterado.getTempoEntregaMinimo());
        produto.setTempoEntregaMaximo(produtoAlterado.getTempoEntregaMaximo());
+       produto.setCategoria(produtoAlterado.getCategoria());
 
        repository.save(produto);
    }
