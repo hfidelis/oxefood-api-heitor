@@ -11,6 +11,7 @@ import br.com.ifpe.oxefood.modelo.cliente.Cliente;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,6 +29,7 @@ public class ClienteRequest {
     private String nome;
 
     @JsonFormat(pattern = "dd/MM/yyyy")
+    @Past(message = "A data de nascimento deve estar no passado")
     private LocalDate dataNascimento;
 
     @NotBlank(message = "O CPF é de preenchimento obrigatório")
